@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="css/default.css"/>
+        <h:outputStylesheet name="css/cssLayout.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+        <h:form>
+          
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="north" size="80" resizable="false" closable="false" collapsible="false">
+                <div align="center"> <h1>REHBER UYGULAMASI</h1></div>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="70" resizable="false" closable="false" collapsible="false">
+                <div align="center"> <h6>Ferruh başer @2018</h6></div>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="200" resizable="false" closable="false" collapsible="false">
+                <p:menu model="#{menuView.model}" />
+
+                <h3>Toggleable</h3>
+                <p:menu toggleable="true">
+                    <p:submenu label="Kişi İşlemleri">
+                        <p:menuitem value="ekle" actionListener="#" icon="ui-icon-disk" />
+                        <p:menuitem value="sil" actionListener="#" icon="ui-icon-arrowrefresh-1-w"/>
+                         <p:menuitem value="Listele" actionListener="#" icon="ui-icon-disk" />
+                          <p:menuitem value="Güncelle" actionListener="#" icon="ui-icon-disk" />
+                    </p:submenu>
+                    <p:submenu label="Non-Ajax">
+                        <p:menuitem value="Delete" actionListener="#{menuView.delete}" update="messages" ajax="false" icon="ui-icon-close"/>
+                    </p:submenu>
+                    <p:submenu label="Navigations">
+                        <p:menuitem value="External" url="http://www.primefaces.org" icon="ui-icon-home"/>
+                        <p:menuitem value="Internal" icon="ui-icon-star"/>
+                    </p:submenu>
+                </p:menu>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <ui:insert name="content">Content</ui:insert>
+            </p:layoutUnit>
+
+        </p:layout>
+        </h:form>
+    </h:body>
+
+</html>
+
+
+
+
+
