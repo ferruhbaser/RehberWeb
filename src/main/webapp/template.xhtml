@@ -13,8 +13,7 @@
     </h:head>
 
     <h:body>
-        <h:form>
-          
+       
         <p:layout fullPage="true">
 
             <p:layoutUnit position="north" size="80" resizable="false" closable="false" collapsible="false">
@@ -26,6 +25,7 @@
             </p:layoutUnit>
 
             <p:layoutUnit position="west" size="200" resizable="false" closable="false" collapsible="false">
+                 <h:form>
                 <p:menu toggleable="true">
                     <p:submenu label="Kişi İşlemleri">
                         <p:menuitem value="ekle" action="kisiEkle.xhtml" icon="ui-icon-disk" />
@@ -41,6 +41,7 @@
                         <p:menuitem value="Internal" icon="ui-icon-star"/>
                     </p:submenu>
                 </p:menu>
+                 </h:form>
             </p:layoutUnit>
 
             <p:layoutUnit position="center">
@@ -48,7 +49,7 @@
             </p:layoutUnit>
 
         </p:layout>
-        </h:form>
+        
     </h:body>
 
 </html>
