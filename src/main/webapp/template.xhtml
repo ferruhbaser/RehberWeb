@@ -26,12 +26,9 @@
             </p:layoutUnit>
 
             <p:layoutUnit position="west" size="200" resizable="false" closable="false" collapsible="false">
-                <p:menu model="#{menuView.model}" />
-
-                <h3>Toggleable</h3>
                 <p:menu toggleable="true">
                     <p:submenu label="Kişi İşlemleri">
-                        <p:menuitem value="ekle" actionListener="#" icon="ui-icon-disk" />
+                        <p:menuitem value="ekle" action="kisiEkle.xhtml" icon="ui-icon-disk" />
                         <p:menuitem value="sil" actionListener="#" icon="ui-icon-arrowrefresh-1-w"/>
                          <p:menuitem value="Listele" actionListener="#" icon="ui-icon-disk" />
                           <p:menuitem value="Güncelle" actionListener="#" icon="ui-icon-disk" />
