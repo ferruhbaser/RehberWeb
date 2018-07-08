@@ -12,6 +12,7 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import javax.ejb.EJB;
 
 /**
@@ -67,7 +68,10 @@ public class kisiMB implements Serializable {
     public void setDogtar(Date dogtar) {
         this.dogtar = dogtar;
     }
-    
+    public List<Kisi> listele()
+    {
+        return kisiFacade.findAll();
+    }
     public String ekle(){
         
         Kisi k = new Kisi();

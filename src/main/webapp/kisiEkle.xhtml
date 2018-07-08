@@ -29,7 +29,9 @@
                             <p:message for="maas"/>
                             
                             <p:outputLabel value="Doğum Tarihi:"/>
-                            <p:inputText id="dogtar" value="#{kisiMB.dogtar}"/>
+                            <p:inputMask id="dogtar" value="#{kisiMB.dogtar}" mask="99/99/9999">
+                                <f:convertDateTime pattern="dd/MM/yyy"/>
+                            </p:inputMask>
                             <p:message for="dogtar"/>
                             
                             <f:facet name="footer">
