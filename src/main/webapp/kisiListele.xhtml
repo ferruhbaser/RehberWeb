@@ -32,7 +32,7 @@
 
                         <p:column headerText="Doğum Tarihi" sortBy="#{kisi.dogtar}">
                             <h:outputText value="#{kisi.dogtar}">
-                                <f:convertDateTime pattern="dd/MM/yyy"/>
+                                <f:convertDateTime pattern="dd/MM/yyy" timeZone="GMT +3"/>
                                                   
                             </h:outputText>
                         </p:column>

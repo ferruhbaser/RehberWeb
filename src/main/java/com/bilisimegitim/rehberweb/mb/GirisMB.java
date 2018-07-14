@@ -24,11 +24,9 @@ public class GirisMB {
     @EJB
     private GirisFacade girisFacade;
 
-   private String kullanici;
-   private String sifre;
-   
-   
-    
+    private String kullanici;
+    private String sifre;
+
     public GirisMB() {
     }
 
@@ -47,25 +45,35 @@ public class GirisMB {
     public void setSifre(String sifre) {
         this.sifre = sifre;
     }
-    
-    public String giris(){
-        
-    boolean sonuc = girisFacade.girisKontrol(kullanici, sifre);
-     
+
+    public String giris() {
+
+        boolean sonuc = girisFacade.girisKontrol(kullanici, sifre);
+
         if (sonuc) {
-       
+
             //Giris basarılı olduysa kullanıcı adını session a yazıyorum.
- HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-    session.setAttribute("username", kullanici);
+            HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+            session.setAttribute("username", kullanici);
             return "menu.xhtml?faces-redirect=true";
-            
+
         } else {
 
- FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Hata", "Kullanıcı adı ya da şifre yanlış !"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Hata", "Kullanıcı adı ya da şifre yanlış !"));
             return "";
-            
+
         }
-    
+
     }
-    
+
+    public String guvenliCikis() {
+
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Session sonlandırıldı!",
+                session.getId()+" nolu session sonlandırıldı."));
+        
+      return "giris.xhtml";  
+    }
+
 }

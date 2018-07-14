@@ -11,18 +11,23 @@
         <ui:composition template="./template.xhtml">
 
             <ui:define name="content">
-                <h:form id="ekleForm">
+                <h:form id="guncelleForm">
                     <div align="center">
+                        <p:messages showDetail="true"/>
+                        
                         <p:panelGrid columns="3" style="position: relative; top: 150px;">
                             <f:facet name="header"> Kişi Ekle </f:facet>
-                      
 
+                             <p:outputLabel value="No:"/>
+                            <p:inputText id="no" value="#{kisiMB.no}" required="true" requiredMessage="No alanı boş geçilemez!"/>
+                            <p:message for="no"/>
+                            
                             <p:outputLabel value="Ad:"/>
-                            <p:inputText id="ad" value="#{kisiMB.ad}" required="true" requiredMessage="Ad alanı boş geçilemez!"/>
+                            <p:inputText id="ad" value="#{kisiMB.ad}" required="false" requiredMessage="Ad alanı boş geçilemez!"/>
                             <p:message for="ad"/>
 
                             <p:outputLabel value="Soyad:"/>
-                            <p:inputText id="soyad" value="#{kisiMB.soyad}" required="true" requiredMessage="Soyadı boş geçilemez!"/>
+                            <p:inputText id="soyad" value="#{kisiMB.soyad}" required="false" requiredMessage="Soyadı boş geçilemez!"/>
                             <p:message for="soyad"/>
                             
                             <p:outputLabel value="Maas:"/>
@@ -37,8 +42,9 @@
                             
                             <f:facet name="footer">
                                 <div align="center">
-                                <p:commandButton value="Ekle" action="#{kisiMB.ekle()}" update="ekleForm"/>
-                               
+                                <p:commandButton value="Güncelle" action="#{kisiMB.guncelle()}" update="guncelleForm"/>
+                                <p:commandButton value="Getir" action="#{kisiMB.getir()}" update="guncelleForm"/>
+                                <p:commandButton value="Temizle" action="#{kisiMB.temizle()}" update="guncelleForm"/>
                                  </div>
                             </f:facet>
                    
