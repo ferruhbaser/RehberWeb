@@ -13,6 +13,11 @@
             <ui:define name="content">
                 <h:form>
                     <p:dataTable var="kisi" value="#{kisiMB.listele()}" paginator="true" rows="20">
+                        
+                        <p:column headerText="No" sortBy="#{kisi.no}">
+                            <h:outputText value="#{kisi.no}" />
+                        </p:column>
+                        
                         <p:column headerText="Ad" sortBy="#{kisi.ad}">
                             <h:outputText value="#{kisi.ad}" />
                         </p:column>
